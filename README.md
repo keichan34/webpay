@@ -1,8 +1,10 @@
 # Webpay
 
-**Warning** This is pre-release, work-in-progress, alpha grade material.
+[![Build Status](https://travis-ci.org/keichan34/webpay.svg?branch=master)](https://travis-ci.org/keichan34/webpay)
 
-An interface to [WebPay](https://webpay.jp) in Elixir.
+**Warning!** This is pre-release, work-in-progress, alpha grade material.
+
+An interface to [WebPay](https://webpay.jp) for Elixir.
 
 This library is not sponsored or supported by WebPay in any way. Please use it
 at your own risk. I encourage you to review the code and test suite before using.
