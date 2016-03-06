@@ -1,0 +1,78 @@
+[
+  {
+    "request": {
+      "body": "{\"card\":{\"number\":\"4242-4242-4242-4242\",\"name\":\"EXAMPLE PERSON\",\"exp_year\":\"2017\",\"exp_month\":\"11\",\"cvc\":\"123\"}}",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/tokens"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"tok_eBE6nv7A29Uc4th\",\n  \"object\": \"token\",\n  \"livemode\": false,\n  \"created\": 1457244511,\n  \"used\": false,\n  \"card\": {\n    \"object\": \"card\",\n    \"exp_year\": 2017,\n    \"exp_month\": 11,\n    \"fingerprint\": \"215b5b2fe460809b8bb90bae6eeac0e0e0987bd7\",\n    \"name\": \"EXAMPLE PERSON\",\n    \"country\": \"JP\",\n    \"type\": \"Visa\",\n    \"cvc_check\": \"pass\",\n    \"last4\": \"4242\"\n  }\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 06 Mar 2016 06:08:31 GMT",
+        "ETag": "\"8c2801ee34200193a0193b5b8a439e39\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "6cd31f191a225faef8094908b63ce3e4",
+        "X-Runtime": "0.105984",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "379",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"email\":\"customer@example.com\",\"card\":\"tok_eBE6nv7A29Uc4th\"}",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"cus_eBE6nv4mM7yT2Hh\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457244511,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": {\n    \"object\": \"card\",\n    \"exp_year\": 2017,\n    \"exp_month\": 11,\n    \"fingerprint\": \"215b5b2fe460809b8bb90bae6eeac0e0e0987bd7\",\n    \"name\": \"EXAMPLE PERSON\",\n    \"country\": \"JP\",\n    \"type\": \"Visa\",\n    \"cvc_check\": \"pass\",\n    \"last4\": \"4242\"\n  },\n  \"recursions\": [\n\n  ]\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 06 Mar 2016 06:08:31 GMT",
+        "ETag": "\"81aa6b8838ee16fcaf9013ee3a36e60c\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "f97fbaf47dc815d02810adb011643c16",
+        "X-Runtime": "0.101774",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "454",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]

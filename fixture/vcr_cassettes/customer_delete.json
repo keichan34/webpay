@@ -1,0 +1,77 @@
+[
+  {
+    "request": {
+      "body": "{\"email\":\"customer@example.com\"}",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"cus_eBEb6H9eh0PP87n\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457245094,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 06 Mar 2016 06:18:14 GMT",
+        "ETag": "\"82f6dd563137c84a2f1bdd02ba460e0e\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "e8e7f40035d1a0256f3b090359350173",
+        "X-Runtime": "0.054589",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "209",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1"
+      },
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers/cus_eBEb6H9eh0PP87n"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"cus_eBEb6H9eh0PP87n\",\n  \"deleted\": true\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 06 Mar 2016 06:18:15 GMT",
+        "ETag": "\"fec2440b30dc1526913e6055d3936254\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "4a40eb088b08c3f7fd2881ad91649dd5",
+        "X-Runtime": "0.077402",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "53",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

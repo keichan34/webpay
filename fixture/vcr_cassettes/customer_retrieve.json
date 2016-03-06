@@ -1,0 +1,77 @@
+[
+  {
+    "request": {
+      "body": "{\"email\":\"customer@example.com\"}",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"cus_eBE4bge4HcmOcjV\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457244734,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 06 Mar 2016 06:12:14 GMT",
+        "ETag": "\"2b2f7f0e80f6ff864a6fc3c084527853\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "a85fd5782408285b6d46edd4cdcc6c2f",
+        "X-Runtime": "0.081225",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "209",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers/cus_eBE4bge4HcmOcjV"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"cus_eBE4bge4HcmOcjV\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457244734,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
+      "headers": {
+        "Cache-Control": "must-revalidate, private, max-age=0",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Sun, 06 Mar 2016 06:12:14 GMT",
+        "ETag": "\"2b2f7f0e80f6ff864a6fc3c084527853\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "miss",
+        "X-Request-Id": "6a90bfe9a9c6a070d891ab3664515154",
+        "X-Runtime": "0.011941",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "209",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
