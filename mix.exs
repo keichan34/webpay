@@ -27,7 +27,8 @@ defmodule Webpay.Mixfile do
       applications: [
         :logger,
         :poison,
-        :httpoison
+        :httpoison,
+        :crypto
       ],
       mod: {Webpay, []}
     ]

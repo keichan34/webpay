@@ -1,5 +1,5 @@
 defmodule Webpay.List do
-  defstruct [:object, :url, :count, :data]
+  defstruct [{:object, "list"}, :url, :count, :data]
 
   @type t :: %Webpay.List{}
 end

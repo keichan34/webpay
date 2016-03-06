@@ -11,6 +11,11 @@ defmodule Webpay do
     |> Keyword.fetch!(:secret_key)
   end
 
+  def memory_adapter_enabled? do
+    adapter == Webpay.Adapter.Memory ||
+    Application.get_env(:webpay, :enable_memory_adapter, false)
+  end
+
   def start(_type, _args) do
     Webpay.Supervisor.start_link
   end
