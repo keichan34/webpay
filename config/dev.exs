@@ -5,4 +5,6 @@ config :webpay, :adapter, Webpay.Adapter.HTTPoison
 #   secret_key: "test_secret_XXX",
 #   public_key: "test_public_XXX"
 
-import_config "dev.secret.exs"
+if File.exists?("./config/dev.secret.exs") do
+  import_config "dev.secret.exs"
+end
