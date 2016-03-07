@@ -15,9 +15,15 @@ end
 defmodule Webpay.Adapter.HTTPoison.ResponseParser do
   @moduledoc false
 
-  alias Webpay.{Customer, Card, Recursion, Token, List}
+  alias Webpay.{Customer, Card, Error, Recursion, Token, List}
 
   import Webpay.Adapter.HTTPoison.ResponseParserGenerator
+
+  def parse_response(%{"error" => error_params}) do
+    Enum.reduce error_params, %Error{}, fn({key, value}, acc) ->
+      Map.put acc, String.to_existing_atom(key), value
+    end
+  end
 
   object_parser "customer", %Customer{}
   object_parser "card", %Card{}

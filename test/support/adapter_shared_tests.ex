@@ -20,6 +20,12 @@ defmodule Webpay.AdapterSharedTests do
       {:ok, customer} = unquote(adapter).customer_create(email: "customer@example.com")
       {:ok, customer2} = unquote(adapter).customer_retrieve(customer.id)
       assert customer.id == customer2.id
+
+      {:error, error} = unquote(adapter).customer_retrieve("cus_not_exist")
+      assert %Webpay.Error{} = error
+      assert error.caused_by == "missing"
+      assert error.param == "id"
+      assert error.type == "invalid_request_error"
     end
   end
 

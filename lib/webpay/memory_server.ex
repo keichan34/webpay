@@ -3,7 +3,7 @@ defmodule Webpay.MemoryServer do
 
   use GenServer
 
-  alias Webpay.{Card, Customer, List, Token}
+  alias Webpay.{Card, Customer, Error, List, Token}
 
   def start_link do
     GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
@@ -37,8 +37,17 @@ defmodule Webpay.MemoryServer do
   end
 
   def handle_call({:customer_retrieve, id}, _, state) do
-    customer = Map.get(state.customers, id)
-    {:reply, {:ok, customer}, state}
+    reply = case Map.fetch(state.customers, id) do
+      {:ok, customer} -> {:ok, customer}
+      :error ->
+        {:error, %Error{
+          message: "No such customer",
+          caused_by: "missing",
+          param: "id",
+          type: "invalid_request_error"
+        }}
+    end
+    {:reply, reply, state}
   end
 
   def handle_call({:customer_update, {id, params}}, _, state) do

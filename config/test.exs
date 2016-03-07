@@ -10,7 +10,10 @@ config :exvcr,
   vcr_cassette_library_dir: "fixture/vcr_cassettes",
   custom_cassette_library_dir: "fixture/custom_cassettes",
   filter_sensitive_data: [
-    [pattern: "Basic [a-zA-Z0-9+/=]+", placeholder: "Basic c2VjcmV0Og=="]
+    # Replace test account credentials used for response generation
+    [pattern: "Basic [a-zA-Z0-9+/=]+", placeholder: "Basic c2VjcmV0Og=="],
+    # Replace my e-mail address
+    [pattern: "[a-zA-Z0-9+]+@kbys\\.me", placeholder: "user@example.com"]
   ],
   filter_url_params: false,
   response_headers_blacklist: [

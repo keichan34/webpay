@@ -7,9 +7,11 @@ defmodule Webpay.Adapter do
   each adapter uses.
   """
 
-  alias Webpay.{Customer, Token}
+  alias Webpay.{Customer, Token, Recursion}
 
-  @type reason :: atom
+  @type http_error_code :: non_neg_integer
+  @type response_body :: binary
+  @type reason :: {:http_error, http_error_code, response_body} | Webpay.Error.t
 
   @type id :: String.t
   @type params :: [...]
@@ -29,4 +31,7 @@ defmodule Webpay.Adapter do
 
   @callback token_create(params) :: token_response
   @callback token_retrieve(id) :: token_response
+
+  # Recursion
+  @type recursion_response :: {:ok, Recursion.t} | {:error, reason}
 end

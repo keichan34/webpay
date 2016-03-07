@@ -29,11 +29,20 @@ defmodule Webpay.Adapter.HTTPoison do
       {:ok, %{status_code: code, body: unparsed_body}} when code >= 200 and code < 300 ->
         {:ok, Poison.decode!(unparsed_body) |> ResponseParser.parse_response}
       {:ok, %{status_code: code, body: unparsed_body}} when code >= 400 and code < 500 ->
-        {:error, {:http_error, code, unparsed_body}}
+        handle_error(unparsed_body, code)
       {:ok, %{status_code: code, body: unparsed_body}} when code >= 500 and code < 600 ->
-        {:error, {:http_error, code, unparsed_body}}
+        handle_error(unparsed_body, code)
       {:error, reason} ->
         {:error, reason}
+    end
+  end
+
+  defp handle_error(unparsed_body, code) do
+    case Poison.decode(unparsed_body) do
+      {:ok, body} ->
+        {:error, ResponseParser.parse_response(body)}
+      {:error, _json_error} ->
+        {:error, {:http_error, code, unparsed_body}}
     end
   end
 
@@ -56,7 +65,8 @@ defmodule Webpay.Adapter.HTTPoison do
     [
       {"Accept", "application/json"},
       {"Authorization", authorization_header_contents},
-      {"User-Agent", "Webpay Elixir Client v0.0.1"}
+      {"User-Agent", "Webpay Elixir Client v0.0.1"},
+      {"Accept-Language", "en"}
     ]
   end
 

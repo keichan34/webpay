@@ -6,6 +6,7 @@
         "Accept": "application/json",
         "Authorization": "Basic c2VjcmV0Og==",
         "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en",
         "Content-Type": "application/json"
       },
       "method": "post",
@@ -14,20 +15,20 @@
       "url": "https://api.webpay.jp/v1/customers"
     },
     "response": {
-      "body": "{\n  \"id\": \"cus_eBE4bge4HcmOcjV\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457244734,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
+      "body": "{\n  \"id\": \"cus_eFMe6F4zWemw2yC\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457313235,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
       "headers": {
         "Cache-Control": "max-age=0, private, must-revalidate",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Sun, 06 Mar 2016 06:12:14 GMT",
-        "ETag": "\"2b2f7f0e80f6ff864a6fc3c084527853\"",
+        "Date": "Mon, 07 Mar 2016 01:13:55 GMT",
+        "ETag": "\"3caccf9b5af6f827c06b14ee8fab1d69\"",
         "Server": "nginx",
         "Status": "201 Created",
         "Strict-Transport-Security": "max-age=631138519",
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "DENY",
         "X-Rack-Cache": "invalidate, pass",
-        "X-Request-Id": "a85fd5782408285b6d46edd4cdcc6c2f",
-        "X-Runtime": "0.081225",
+        "X-Request-Id": "23bc6c64a03cc18f4adf5b08fa8bee32",
+        "X-Runtime": "0.058906",
         "X-UA-Compatible": "IE=Edge,chrome=1",
         "X-XSS-Protection": "1; mode=block",
         "Content-Length": "209",
@@ -43,34 +44,72 @@
       "headers": {
         "Accept": "application/json",
         "Authorization": "Basic c2VjcmV0Og==",
-        "User-Agent": "Webpay Elixir Client v0.0.1"
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en"
       },
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "https://api.webpay.jp/v1/customers/cus_eBE4bge4HcmOcjV"
+      "url": "https://api.webpay.jp/v1/customers/cus_eFMe6F4zWemw2yC"
     },
     "response": {
-      "body": "{\n  \"id\": \"cus_eBE4bge4HcmOcjV\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457244734,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
+      "body": "{\n  \"id\": \"cus_eFMe6F4zWemw2yC\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457313235,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
       "headers": {
         "Cache-Control": "must-revalidate, private, max-age=0",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Sun, 06 Mar 2016 06:12:14 GMT",
-        "ETag": "\"2b2f7f0e80f6ff864a6fc3c084527853\"",
+        "Date": "Mon, 07 Mar 2016 01:13:55 GMT",
+        "ETag": "\"3caccf9b5af6f827c06b14ee8fab1d69\"",
         "Server": "nginx",
         "Status": "200 OK",
         "Strict-Transport-Security": "max-age=631138519",
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "DENY",
         "X-Rack-Cache": "miss",
-        "X-Request-Id": "6a90bfe9a9c6a070d891ab3664515154",
-        "X-Runtime": "0.011941",
+        "X-Request-Id": "488f97dd967c5e40385d1705aecda155",
+        "X-Runtime": "0.012157",
         "X-UA-Compatible": "IE=Edge,chrome=1",
         "X-XSS-Protection": "1; mode=block",
         "Content-Length": "209",
         "Connection": "keep-alive"
       },
       "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers/cus_not_exist"
+    },
+    "response": {
+      "body": "{\n  \"error\": {\n    \"message\": \"No such customer\",\n    \"caused_by\": \"missing\",\n    \"param\": \"id\",\n    \"type\": \"invalid_request_error\"\n  }\n}\n",
+      "headers": {
+        "Cache-Control": "no-cache, private",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 07 Mar 2016 01:13:55 GMT",
+        "Server": "nginx",
+        "Status": "404 Not Found",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "miss",
+        "X-Request-Id": "92a1abb24c4099594f6fa13c866b0627",
+        "X-Runtime": "0.020947",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "139",
+        "Connection": "keep-alive"
+      },
+      "status_code": 404,
       "type": "ok"
     }
   }
