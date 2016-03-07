@@ -3,7 +3,7 @@ defmodule Webpay.MemoryServer do
 
   use GenServer
 
-  alias Webpay.{Card, Customer, Error, List, Token}
+  alias Webpay.{Card, Customer, DeleteResponse, Error, List, Token}
 
   def start_link do
     GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
@@ -71,7 +71,7 @@ defmodule Webpay.MemoryServer do
 
   def handle_call({:customer_delete, id}, _, state) do
     state = update_in(state.customers, &Map.delete(&1, id))
-    {:reply, {:ok, %{"id" => id, "deleted" => true}}, state}
+    {:reply, {:ok, %DeleteResponse{id: id, deleted: true}}, state}
   end
 
   def handle_call({:customer_all, {}}, _, state) do

@@ -1,0 +1,40 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/account"
+    },
+    "response": {
+      "body": "{\n  \"object\": \"account\",\n  \"id\": \"acct_e4C0Ud8Xk03z1zR\",\n  \"email\": \"user@example.com\",\n  \"statement_descriptor\": null,\n  \"details_submitted\": false,\n  \"charge_enabled\": false,\n  \"currencies_supported\": [\n    \"jpy\"\n  ],\n  \"card_types_supported\": [\n    \"Visa\",\n    \"American Express\",\n    \"MasterCard\",\n    \"JCB\",\n    \"Diners Club\"\n  ]\n}\n",
+      "headers": {
+        "Cache-Control": "must-revalidate, private, max-age=0",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 07 Mar 2016 02:27:35 GMT",
+        "ETag": "\"80dc4c4a4780122c8f69f638756dabbb\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "miss",
+        "X-Request-Id": "29e8fb50d18baafa57aee2a1019ccda6",
+        "X-Runtime": "0.012654",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "345",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

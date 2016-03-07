@@ -23,6 +23,22 @@ defmodule Webpay.Adapter.HTTPoison do
   def token_retrieve(id),
     do: request(:get, "/tokens/" <> id)
 
+  def recursion_create(params),
+    do: request(:post, "/recursions", params)
+  def recursion_retrieve(id),
+    do: request(:get, "/recursions/" <> id)
+  def recursion_resume(id, params \\ []),
+    do: request(:post, {"/recursions/" <> id <> "/resume", params})
+  def recursion_delete(id),
+    do: request(:delete, "/recursions/" <> id)
+  def recursion_all(params),
+    do: request(:get, {"/recursions", params})
+
+  def account_retrieve,
+    do: request(:get, "/account")
+  def account_delete_data,
+    do: request(:delete, "/account/data")
+
   defp request(method, uri, body \\ nil, extra_headers \\ []) do
     request_headers = headers(method) ++ extra_headers
     case HTTPoison.request(method, build_uri(uri), build_body(body), request_headers) do

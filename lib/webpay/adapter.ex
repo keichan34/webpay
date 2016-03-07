@@ -7,7 +7,7 @@ defmodule Webpay.Adapter do
   each adapter uses.
   """
 
-  alias Webpay.{Customer, Token, Recursion}
+  alias Webpay.{Account, Customer, Token, List, Recursion}
 
   @type http_error_code :: non_neg_integer
   @type response_body :: binary
@@ -16,14 +16,16 @@ defmodule Webpay.Adapter do
   @type id :: String.t
   @type params :: [...]
 
+  @type delete_response :: {:ok, Webpay.DeleteResponse} | {:error, reason}
+
   # Customer
   @type customer_response :: {:ok, Customer.t} | {:error, reason}
 
   @callback customer_create(params) :: customer_response
   @callback customer_retrieve(id) :: customer_response
   @callback customer_update(id, params) :: customer_response
-  @callback customer_delete(id) :: customer_response
-  @callback customer_all(params) :: {:ok, [Customer.t, ...]} | {:error, reason}
+  @callback customer_delete(id) :: delete_response
+  @callback customer_all(params) :: {:ok, List.t} | {:error, reason}
   @callback customer_delete_active_card(id) :: customer_response
 
   # Token
@@ -34,4 +36,16 @@ defmodule Webpay.Adapter do
 
   # Recursion
   @type recursion_response :: {:ok, Recursion.t} | {:error, reason}
+
+  @callback recursion_create(params) :: recursion_response
+  @callback recursion_retrieve(id) :: recursion_response
+  @callback recursion_resume(id, params) :: recursion_response
+  @callback recursion_delete(id) :: delete_response
+  @callback recursion_all(params) :: {:ok, List.t} | {:error, reason}
+
+  # Account
+  @type account_response :: {:ok, Account.t} | {:error, reason}
+
+  @callback account_retrieve :: account_response
+  @callback account_delete_data :: delete_response
 end

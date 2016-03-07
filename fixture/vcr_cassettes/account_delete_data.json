@@ -1,0 +1,116 @@
+[
+  {
+    "request": {
+      "body": "{\"email\":\"customer@example.com\"}",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers"
+    },
+    "response": {
+      "body": "{\n  \"id\": \"cus_eFM8It9lJaZs3vw\",\n  \"object\": \"customer\",\n  \"livemode\": false,\n  \"created\": 1457317250,\n  \"email\": \"customer@example.com\",\n  \"description\": null,\n  \"active_card\": null,\n  \"recursions\": [\n\n  ]\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 07 Mar 2016 02:20:51 GMT",
+        "ETag": "\"bfea4588c5b73e8984d046ec15d484c6\"",
+        "Server": "nginx",
+        "Status": "201 Created",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "b50bd090a7ac1802c706cd2304f687ae",
+        "X-Runtime": "0.056901",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "209",
+        "Connection": "keep-alive"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en"
+      },
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/account/data"
+    },
+    "response": {
+      "body": "{\n  \"deleted\": true\n}\n",
+      "headers": {
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 07 Mar 2016 02:20:51 GMT",
+        "ETag": "\"ffc2622aa8286367b501554d9625bc7e\"",
+        "Server": "nginx",
+        "Status": "200 OK",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "invalidate, pass",
+        "X-Request-Id": "d4aeb275546895e65444d89c9dfbf8a5",
+        "X-Runtime": "0.327407",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "22",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Basic c2VjcmV0Og==",
+        "User-Agent": "Webpay Elixir Client v0.0.1",
+        "Accept-Language": "en"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.webpay.jp/v1/customers/cus_not_exist"
+    },
+    "response": {
+      "body": "{\n  \"error\": {\n    \"message\": \"No such customer\",\n    \"caused_by\": \"missing\",\n    \"param\": \"id\",\n    \"type\": \"invalid_request_error\"\n  }\n}\n",
+      "headers": {
+        "Cache-Control": "no-cache, private",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Mon, 07 Mar 2016 02:20:51 GMT",
+        "Server": "nginx",
+        "Status": "404 Not Found",
+        "Strict-Transport-Security": "max-age=631138519",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Rack-Cache": "miss",
+        "X-Request-Id": "fea6e20ce7feaa6204adfc3b2fc36bf6",
+        "X-Runtime": "0.027022",
+        "X-UA-Compatible": "IE=Edge,chrome=1",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Length": "139",
+        "Connection": "keep-alive"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

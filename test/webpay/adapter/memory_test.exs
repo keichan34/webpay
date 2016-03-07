@@ -31,4 +31,12 @@ defmodule Webpay.Adapter.MemoryTest do
   test "token_create/1 and token_retrieve/1" do
     token_create_test(Adapter)
   end
+
+  test "recursion_create/1 and recursion_retrieve/1"
+  test "recursion_resume/2"
+  test "recursion_delete/1"
+  test "recursion_all/1"
+
+  test "account_retrieve/1"
+  test "account_delete_data/1"
 end

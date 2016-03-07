@@ -15,7 +15,8 @@ end
 defmodule Webpay.Adapter.HTTPoison.ResponseParser do
   @moduledoc false
 
-  alias Webpay.{Customer, Card, Error, Recursion, Token, List}
+  alias Webpay.{Account, Customer, Card, Error, Recursion, Token, List,
+    DeleteResponse}
 
   import Webpay.Adapter.HTTPoison.ResponseParserGenerator
 
@@ -25,6 +26,13 @@ defmodule Webpay.Adapter.HTTPoison.ResponseParser do
     end
   end
 
+  def parse_response(%{"deleted" => true} = params) do
+    Enum.reduce params, %DeleteResponse{}, fn({key, value}, acc) ->
+      Map.put acc, String.to_existing_atom(key), value
+    end
+  end
+
+  object_parser "account", %Account{}
   object_parser "customer", %Customer{}
   object_parser "card", %Card{}
   object_parser "recursion", %Recursion{}
